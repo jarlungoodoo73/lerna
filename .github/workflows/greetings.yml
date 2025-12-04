@@ -9,8 +9,14 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
+    - uses: actions/first-interaction@3c71ce730280171fd1cfb57c00c774f8998586f7 # v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Message that will be displayed on users' first issue"
-        pr-message: "Message that will be displayed on users' first pull request"
+        issue-message: |
+          👋 Hi there! Thank you for opening your first issue in this repository. We appreciate your contribution!
+          Please make sure to review our [contributing guidelines](https://github.com/${{ github.repository }}/blob/main/CONTRIBUTING.md) and provide as much detail as possible.
+          If you have any questions, feel free to ask. Welcome aboard!
+        pr-message: |
+          🎉 Thank you for submitting your first pull request! We're excited to review your contribution.
+          Please ensure you have followed our [contributing guidelines](https://github.com/${{ github.repository }}/blob/main/CONTRIBUTING.md) and that all checks pass.
+          If you need any help, don't hesitate to reach out. We're glad to have you as part of our community!
